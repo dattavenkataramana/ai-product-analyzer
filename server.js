@@ -39,6 +39,8 @@ const analyzeIngredients = (ingredients) => {
   return { score, issues };
 };
 
+
+console.log("Server running on port 5000");
 /* ================= GROK AI FUNCTION ================= */
 const getAIExplanation = async (product, ingredients, issues) => {
   try {
