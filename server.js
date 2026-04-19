@@ -39,6 +39,7 @@ const analyzeIngredients = (ingredients) => {
   return { score, issues };
 };
 
+
 /* ================= GROK AI FUNCTION ================= */
 const getAIExplanation = async (product, ingredients, issues) => {
   try {
