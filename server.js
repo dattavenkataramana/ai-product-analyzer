@@ -130,7 +130,7 @@ app.post("/analyze", async (req, res) => {
 
 /* ================= HEALTH CHECK ================= */
 app.get("/", (req, res) => {
-  res.send("AI Product Analyzer is running 🚀");
+  res.send("AI Product Analyzer is running 🚀 in docker datta ");
 });
 
 /* ================= START SERVER ================= */
