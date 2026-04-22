@@ -17,7 +17,7 @@ process.on("uncaughtException", (err) => {
 process.on("unhandledRejection", (err) => {
   console.error("UNHANDLED PROMISE:", err);
 });
-console.log("Server started");
+
 /* ================= RISK ENGINE ================= */
 const riskDB = {
   sugar: { risk: 20, reason: "High sugar → diabetes risk" },
@@ -130,7 +130,7 @@ app.post("/analyze", async (req, res) => {
 
 /* ================= HEALTH CHECK ================= */
 app.get("/", (req, res) => {
-  res.send("AI Product Analyzer is running 🚀");
+  res.send("AI Product Analyzer is running 🚀 in docker datta ");
 });
 
 /* ================= START SERVER ================= */
