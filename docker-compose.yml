@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+  api-gateway:
+    image: dattavenkataramana/api-gateway:latest
+    ports:
+      - "5000:5000"
+    depends_on:
+      - product-service
+
+  product-service:
+    image: dattavenkataramana/product-service:latest
+    depends_on:
+      - ai-service
+
+  ai-service:
+    image: dattavenkataramana/ai-service:latest
+
+  redis:
+    image: redis:7
+
+  mongo:
+    image: mongo:7
