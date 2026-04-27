@@ -12,3 +12,6 @@ export const errorHandler = (err, req, res, next) => {
     requestId: req.id,
   });
 };
+
+
+console.log("errorHandler");
