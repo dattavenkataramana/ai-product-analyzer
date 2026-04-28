@@ -1,25 +1,24 @@
-//D:\ai-product-analyzer\services\api-gateway\src\middleware\request.js
-import { v4 as uuidv4 } from "uuid";
-
-
+import { randomUUID } from "crypto";
 import morgan from "morgan";
 import { logger } from "../utils/logger.js";
 
+/* ================= REQUEST ID ================= */
 export const requestId = (req, res, next) => {
   try {
-    req.id = req.headers["x-request-id"] || uuidv4();
+    req.id = req.headers["x-request-id"] || randomUUID();
     res.setHeader("x-request-id", req.id);
-    next();
   } catch (err) {
     console.error("requestId error:", err);
-    next();
+    req.id = "unknown"; // fallback
   }
+  next();
 };
 
+/* ================= HTTP LOGGER ================= */
 export const httpLogger = morgan((tokens, req, res) => {
   try {
     logger.info({
-      requestId: req.id,
+      requestId: req.id || "no-id",
       method: tokens.method(req, res),
       url: tokens.url(req, res),
       status: tokens.status(req, res),
