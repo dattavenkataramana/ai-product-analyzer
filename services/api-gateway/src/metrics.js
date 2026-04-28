@@ -1,3 +1,4 @@
+//services/api-gateway/src/metrics.js
 import client from "prom-client";
 
 export const register = new client.Registry();

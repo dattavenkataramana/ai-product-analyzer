@@ -19,8 +19,7 @@
 //   }
 // });
 
-// export default app;
-
+// D:\ai-product-analyzer\services\api-gateway\src\app.js
 import express from "express";
 import axios from "axios";
 import { requestId, httpLogger } from "./middleware/request.js";

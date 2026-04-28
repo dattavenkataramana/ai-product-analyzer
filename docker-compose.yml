@@ -22,21 +22,24 @@
 #   mongo:
 #     image: mongo:7 
 
-
+#D:\ai-product-analyzer\docker-compose.yml
 
 version: "3.9"
 
 services:
   api-gateway:
-    build: ./services/api-gateway
+    image: dattavenkataramana/api-gateway:latest
     ports:
       - "5000:5000"
+    depends_on:
+      - product-service
+      - ai-service
 
   product-service:
-    build: ./services/product-service
+    image: dattavenkataramana/product-service:latest
 
   ai-service:
-    build: ./services/ai-service
+    image: dattavenkataramana/ai-service:latest
 
   prometheus:
     image: prom/prometheus

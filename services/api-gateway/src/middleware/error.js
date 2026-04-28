@@ -1,3 +1,4 @@
+//D:\ai-product-analyzer\services\api-gateway\src\middleware\error.js
 import { logger } from "../utils/logger.js";
 
 export const errorHandler = (err, req, res, next) => {
