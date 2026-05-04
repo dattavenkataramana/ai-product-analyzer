@@ -85,5 +85,5 @@ app.get("/health", (req, res) => {
 });
 
 app.use(errorHandler);
-
+console.log("AI Service running on port 5002");
 export default app;
